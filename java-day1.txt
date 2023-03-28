@@ -1,0 +1,137 @@
+Java
+----
+Object oriented programming
+
+Java is used for building android apps, mobile apps, web apps
+
+platform independent language
+
+its open source and free
+
+
+4300 ----> 
+
+C
+C++
+Pascal
+
+COBOL
+
+
+
+
+
+Microsoft  ------> DotNet
+
+Sun Microsystems----> Java
+
+Oracle----> Java---> 1995
+
+1995---> v1
+
+
+v4---->JDK4
+jdk7
+
+
+v8----> jdk8
+Functional Programming
+Modular Programming
+
+v9----> jdk9
+
+v11----> jdk11
+
+
+2023-----> v19
+
+
+Principles of Programming Lang (PPL)
+------------------------------------
+
+1. Structured
+
+2. Object Oriented----> classes and Objects
+
+3. Logic Oriented
+
+4. Functional Lang----> lambdas
+
+5. Modular Lang
+
+IDE (Integrated Development Env)
+
+1. myeclipse
+2. intellij
+3. Eclipse---Open source
+4. vs code
+5. notepad++
+6. netbeans
+
+
+class HelloWorld{
+
+		public static void main(String args[]){
+			System.out.println("Hello World...!");
+		}
+}
+
+Basics
+------
+
+1. Input and output methods
+
+output methods
+---------------
+System.out.println("any string");
+int i=10
+float x = 20.23
+String str = "praveen";
+
+System.out.println(i); ----> 10
+
+Input Methods
+--------------
+
+1. Scanner class
+
+2. Commnad Line Arguments
+
+3. IO Streams
+
+#include<stdio.h>
+#include<conio.h>
+void main(){
+	printf("string");
+	scanf("%d",&d);
+}
+
+pre defined packages
+
+java.lang.*;
+util
+
+import <packagename>;
+import java.util.*
+import java.util.Scanner;
+import java.util.List;
+import java.util.Queue;
+import java.io.BufferedReader;
+
+
+
+
+
+Scanner sc = new Scanner(System.in);
+sc.nextInt()---> used to read integer values from keyboard
+sc.nextFloat()---> used to read float values from keyboard
+sc.nextDouble()---> used to read double values from keyboard
+sc.next()----> to read strings without blank spaces
+sc.nextLine() ---> to read strings with blank spaces
+
+
+System.out.println("The value entered is :"+x);
+
+
+
+
