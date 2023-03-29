@@ -1,0 +1,553 @@
+Basics of Programing:
+	1. data types
+	2. control statements
+	3. methods
+
+OOPS:
+	class
+	object	
+	static implementation
+	constructors
+	polymorphism- Method Overloading
+	this keyword
+	Interfaces
+	Inheritance
+
+
+
+Data types
+----------
+Data type refers to type of the data with which we are handling in the program:
+refers 3 things:
+
+1. nature
+2. range -capacity
+3. operations
+
+variable -- Memory space
+
+predefined-- 
+user defined  -- Array,String, Classes
+
+
+
+
+Data Type 	Default Value 	Default size
+---------		-------------	------------
+boolean 		false 				1 bit
+char 			'\u0000' 			2 byte
+byte 			0 					1 byte
+short 			0 					2 byte
+int 			0 					4 byte
+long 			0L 					8 byte
+float 			0.0f 				4 byte
+double 		0.0d 				8 byte
+
+
+
+syntax
+
+datatype variablename;
+int x,y;
+int m;
+sop(m); // 0
+
+
+
+
+char ch;
+
+boolean flag;
+flag=true;
+x=20;
+y='z';  // error
+
+ch='z';
+
+double d;
+d=20.3213;
+
+sop(ch);  // print z
+sop(x); // 20
+sop(x+30); 50
+
+sop("30"+x); error
+
+
+1. variables name should always represented in lower cases
+2. variable name should represent its purpose
+firstNumber---camel case  --increase readability
+
+firstnumber
+FIRSTNUMBER
+
+firstNumber
+
+Control Statements
+-------------------
+
+Control statements are those statements which will transfer the control
+from one part of the program to another part of the program
+
+1. conditional based control statements
+	if, switch, loops
+
+2. unconditional based control statements;
+	break, continue
+
+
+
+
+s1;
+s2;
+s3;
+s4;
+s5;
+s6;
+
+
+if
+--
+if clause is a conditional based control statements, which will select one block
+out of two blocks
+
+
+simple if
+if else
+nested if
+else if
+
+
+syntax for simple if
+
+if (cond ){
+	statements;
+}
+next statements;
+
+
+if else
+-------
+
+if(cond)
+{
+	true block
+}
+else
+{
+	false block
+}
+next statement
+
+
+nested if
+----------
+if (cond1){
+		if(cond2){
+			s1:
+		}
+		else{
+			s2;
+		}
+}
+else {
+		if( cond3 ){
+			s3;
+		}
+		else
+		{
+			s4;
+		}
+}
+
+else if
+-------
+
+if (cond1){
+		s1;
+else if( cond2) {
+		s2;
+else if (cond3) {
+		s3;
+else if (cond4) {
+		s4;
+;
+;
+;
+else if (condn) {
+		sn;
+else
+		sn+1
+
+switch
+------
+
+switch(variable/value)
+{
+case value1 : statements;break;
+case value2 : statements; break;
+case value3 : statements; break;
+;
+;
+defult :statements;
+}
+next statement;
+
+values can be either integer or string;
+
+loops
+------
+
+loop is a statment which will repeats the given set of staements for
+a fixed number of times
+
+sop("hello");
+
+while()
+do..while()
+for()
+
+syntax for while()
+---------------------
+
+while(cond)
+{
+	statments;
+}
+next_statement
+entry controlled loop
+//break or continue
+
+
+do{
+	statements;
+}while(cond);
+exit controlled loop
+
+
+
+for()  ---> counter controlled loop
+
+for(intializer;cond;inc/dec){
+
+}
+
+for(datatype var:collection)
+{
+
+
+}
+
+forEach()  // collections
+
+OOPS
+----
+Object Oriented Programming Systems
+
+It is making the programable element as if it beahvaes like a real time entity
+
+
+Objects are identified by their unique behaviour
+
+if we group the objects which are exhibiting the similar behvaiour is called a class
+
+
+class-- collection of objects exhibiting similar behviour
+object-- instance of the class is called object
+
+classes are imaginary entities
+objects are real time entities
+
+HumanBeings -----> 
+
+Flower
+
+ax2 +bx +c =0   ---> class
+3x2 +4x +3=0----> object
+
+in java, class is a collection of variables and member functions
+
+class <classname>
+{
+	// variables;
+	// member functions;
+}
+
+Classname objname = new Classname();
+
+
+class Employee{
+	int empid;
+	String name;
+	String dept;
+	static String org;
+	public void getDetails(){
+		// code;
+	}
+	public void showDetails(){
+		// code;
+	}
+}
+
+Employee emp1 = new Employee();
+Employee emp2 = new Employee();
+emp1 and emp2 are objects are Employee class
+
+emp1.empid
+emp1.name
+empl.dept
+emp1.getDetails()
+emp1.showDetails()
+
+
+
+class HumanBeing{
+		int age;
+		String name;
+		static String country;
+		public void talking(){
+		sop(age)
+		}
+		public void eating(){
+			int a;
+
+		}
+		public void sleeping(){
+		}
+}
+
+HumanBeing obj1 = new HumanBeing();
+HumanBeing obj2 = new HumanBeing();
+obj1 and obj2 are objects for class HumanBeing
+
+obj1.name
+obj1.age
+obj1.talking()
+obj1.eating()
+obj1.sleeping()
+
+obj2.name
+obj2.age
+obj2.talking()
+obj2.eating()
+obj2.sleeping()
+
+
+Assignments
+-----------
+1. Write a Java program to solve quadratic equations
+2. Write a Java program that keeps a number from the user and generates an integer between 1 and 7 and displays the name of the weekday.
+
+3.  Write a program in display the sum of first n natural numbers;
+4.  Write a program in Java to display sum of cubes of numbers from 1 to n.
+5. Write a program in Java to display the pattern like right angle triangle with a number
+1
+12
+123
+1234
+12345
+etc
+
+
+HumanBeing obj2 = new HumanBeing();
+
+3 things in background
+----------------------
+1. First it will load the .class file into primary memory
+
+2. it will instantiate the non static varibles // it will allocate the
+memory to the variables
+
+3. It will initialize the variables.
+
+three types variables inside the class
+-----------------------------------------
+1. non static or instance variables---> 
+2. static or non instance variables
+3. local or method variables
+
+static 
+
+1. a static variable will share the same space to all the objects
+
+2. a static variable can be refered directly on the class without creating the object
+
+Static on method
+----------------
+this can be called directly on the class without creating the object
+
+All static methods can access only static variables
+
+static can be applied on block
+
+when static is applied on block, then this will be automatically executed
+when the .class file is loaded into memory
+
+
+non static blocks will be automatically executed when ever the object is created
+
+
+static can be applied on three levels
+
+1. variable---> all the objects will share the same memory space,
+					static variable can be called directly on class
+
+2. method---> this method can be called directly on the class without creating the
+object
+
+3. block---> this block will be automatically executed whenever .class file
+is loaded into primary memory.
+
+
+
+Constructor
+------------
+These are building blocks of objects
+constructors are automatically executed
+
+two types of constructors
+1. default constructor
+		a. user
+		b. system
+2. parameterized constructor
+		a. user
+
+constructor is a special method, which will be automatically executed
+when ever the object is created.
+
+constructor name will be same as that of classname, and it doesnt have
+any return type.
+
+constructors are used to initialize the object values
+
+constructors can have the mandatory code to be executed when ever the object
+is created.
+
+
+class Student{
+	
+	String name;
+	String branch;
+	public void display(){
+			Sop(name+" "+branch);
+	}
+}
+
+parameterized constructors will define the rule of creating the objects
+
+
+this()---->  it is used to call one form of constructor into another form of constructor
+
+
+1. this() method should be your first line in the constructor.
+2. this() method call should not form any cycle
+3. this () method call cannot be recursive
+4. this() method cannot be called from userdefined methods
+
+this keyword is used to refer the current object instance
+and also to refer the one constructor into another constructor form.
+
+Encapsulation: It is process of combining both data and member functions together inside
+the class is called encapsulation
+
+It provides the security for the data inside the class
+
+
+Polymorphism
+------------
+
+The ability of an entity to exists in more than one form is called polymorphsim
+
+1. compile time polymorphsim  ---> method overloading
+2. runtime polymorphism----> method overriding
+
+
+x=10;
+y=20.33;
+flag=false
+
+Sop("praveen");
+sop(x);
+sop(flag);
+sop(y);
+
+println(int x){
+
+}
+
+println(char ch){
+
+}
+
+println(String s){
+
+}
+
+println(double d){
+
+}
+
+
+public void display(int x){
+	//code
+}
+
+display("xyz")
+
+when two or more methods have the same name and if they differ in any one of the
+following
+1. either in number of parameters
+2. type of parameters
+3. order of parameters
+then those methods are said tobe overloaded
+
+
+
+public void sample(int x){
+	
+}
+
+public int sample(int a, int b){
+
+}
+
+
+sample(20);
+sample(10,20);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
