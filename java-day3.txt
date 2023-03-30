@@ -315,6 +315,147 @@ class Oracledb implements DataConnection{
 }
 
 
+Static Methods and default methods in interfaces
+------------------------------------------------
+java8 onwards
+
+
+
+interface shopping{
+		public void selectgoods();
+		public void payment();
+		public void shipement();
+		public default void otp(){
+
+		}
+}
+
+
+class CashShops implements Shopping{
+		public void selectgoods(){
+
+		}
+		public void payment(){
+		// cash
+		}
+		public void shipement(){
+		}
+		
+
+}
+
+class UpiShops implements Shopping{
+		public void selectgoods(){
+
+		}
+		public void payment(){
+			// payment is through upi
+		}
+		public void shipement(){
+		}
+
+		public void otp(){
+
+		}
+}
+
+
+
+Lambda Expressions
+------------------
+
+Functional Programming
+
+
+
+Lambda expressions are unianmous methods which does not have any name,
+access modifiers and return types
+
+
+public void display(){
+		System.out.println("Hello World...!");
+}
+
+
+()-> {
+		System.out.println("Hello World...!");
+}
+
+1. if your method body has only one statement then block is not required
+
+
+()-> System.out.println("Hello World...!");
+
+		
+public int add(int a, int b){
+		return a+b;
+}
+
+
+(int a, int b) -> {
+		return a+b;
+}
+
+(int a, int b) -> 	return a+b;
+
+// in lambda expression datatype is not required for parameters
+
+(a,b) -> return a+b;
+
+// if the body has only one statement and that is return statement, then
+return keyword is also not requried
+
+(a,b) -> a+b;
+
+
+
+public boolean check(int a, int b){
+		if ( a < b}
+			return true;
+		else
+			return false;
+}
+
+(a,b)  -> {
+		if ( a < b) 
+			return true;
+		else
+			return false;
+}
+
+(a,b)-> a < b;
+
+
+public boolean isEven(int x){
+		if ( x%2==0)
+			return true;
+		else
+			return false;
+}
+
+
+(x) -> x%2==0; 
+
+x-> x%2==0;
+
+
+public void display(){
+		sop("first line");
+		sop("second line");
+		sop("third line");
+}
+
+
+()->{
+		sop("first line");
+		sop("second line");
+		sop("third line");
+}
+
+Lambda expressions are used to implement functional interfaces
+
+
+
 
 
 
