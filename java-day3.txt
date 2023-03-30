@@ -454,6 +454,140 @@ public void display(){
 
 Lambda expressions are used to implement functional interfaces
 
+An interface with only one abstract method is called a functional interfaces
+
+
+interface Maths{
+		public int add(int a, int b);
+}
+
+
+class Mathematics implements Maths{
+		public int add(int a, int b){
+			return a+b;
+		}
+}
+
+Mathematics m = new Mathematics();
+sysout(m.add(10,20)); // 30
+
+
+
+
+Runnable  has only one method ----> run()
+
+Comparable  ----> has only one method called --> compareTo
+
+Comparator -----> has only one method called ---> compare
+
+
+public boolean prime(int x){
+
+	// check the given number if prime return true
+	// else return false;
+}
+
+public boolean checkEven(int x){
+		// check even or odd if even return true
+		// else false
+}
+
+public boolean checkVowels(String str){
+		// check whether all vowels are in the string
+		// if present return true else return false;
+}
+
+General purpose functional interfaces are:
+
+1. Predicate
+2. Function
+3. Consumer
+4. Supplier
+
+Predicate:  Is a functional interface which has only one method called test,
+which will take one argument of any datatype and returns boolean value;
+
+@FunctionalInterface
+interface Predicate<T>{
+		public boolean test(T t);
+}
+
+
+Predicate<Integer> p = x -> x%2==0;
+
+p.test(10);----> true
+p.test(11);-->false
+
+
+Preidcate<String> p2 = str-> str.charAt(0)=='A';
+
+
+p2.test("Apple")---> true
+p2.test("boy");--->false
+
+
+these are available in java.util.function;
+
+import java.util.function.Predicate;
+import java.util.function.Function;
+import java.util.function.Consumer;
+
+conjunction operators that can be applied on predicates are:
+1. and
+2. or
+3. not
+
+
+Function
+---------
+Function is also a functional interface with only one method called
+apply this will take any single datatype as input and can return any
+datatype 
+
+@FunctionalInterface
+public interface Function<T,R>{
+		public R apply(T t);
+}
+
+Function<Integer,Integer> f1 = x -> x*x*x;
+Function<Integer,Integer> f2 = x -> 2*x;
+  f1---> f2---> 8
+
+  f2 ---> f1---> 64
+
+Function<Integer,Integer> f3 = x -> {
+			int fact=1;
+			for(int i=2;i<=x;i++)
+				fact= fact*i;
+			return f;
+};
+
+f1.apply(3);----> 27
+f2.apply(4); ---> 8
+f3.apply(5);----> 120
+
+
+andThen()---> f1 and f2
+compose()----> f1 and f2
+
+Consumer
+--------
+
+@FunctionalInterface
+public interface Consumer<T>{
+		public void accept(T t);
+}
+
+
+Supplier
+-------
+
+@FunctionalInterface
+public interface Supplier<R>{
+		public R get();
+}
+
+
 
 
 
