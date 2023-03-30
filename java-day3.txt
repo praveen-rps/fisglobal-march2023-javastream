@@ -1,0 +1,329 @@
+Agenda
+------
+1. Inheritance
+2. Access Modifers
+3. final keywords
+4. Abstract classes and Interfaces
+5. default methods and static methods in interfaces
+6. Functional Interfaces
+7. lambda expressions
+8. utility functional interfaces
+		1. Predicate
+		2. Consumer
+		3. Function
+		4. Supplier
+
+Inheritance
+-----------
+it is the process of obtaining the properties
+from one class to another class.
+
+-> code resuablity
+
+Relation
+--------
+1. is-a ---> code of one class will be provided to 
+another class
+
+class Parent{
+	// properties
+}
+class Child extends Parent{
+
+
+}
+
+The class which is providing properties is called base
+/ parent
+
+The class which is acquiring properties is called derived
+/ child
+
+types of inheritances
+---------------------
+1. single 
+2. multilevel
+3. multiple
+
+Permanent
+Temporary
+Hourly
+
+class PermanentEmployee{
+		int empid;
+		String name;
+		String dept;
+		String doj;
+		String desg;
+		double sal;
+		double ded;
+		public void calSal(){
+		}
+}
+
+class TemporaryEmployee{
+		int empid;
+		String name;
+		String dept;
+		String doj;
+		String desg;
+		double conSal;
+		public void calSal(){
+		}
+}
+
+class HourlyEmployee{
+		int empid;
+		String name;
+		String dept;
+		String doj;
+		String desg;
+		double rph;
+		int noh;
+		public void calSal(){
+		}
+}
+
+class Employee{
+		int empid;
+		String name;
+		String dept;
+		String doj;
+		String desg;
+}
+
+class HEmployee extends Employee{
+
+	   double rph;
+		int noh;
+		public void calSal(){
+		}
+
+}
+
+
+class PEmployee extends Employee{
+
+	  double conSal;
+		public void calSal(){
+		}
+
+}
+
+class PEmployee extends Employee{
+
+	  double sal;
+		double ded;
+		public void calSal(){
+		}
+
+}
+
+
+
+child = child+parent
+
+PEmployee emp1 = new PEmployee();
+
+
+Overrriding -- Runtime Polymorphism
+-----------------------------------
+It is the process of supressing the base class methods in dervied class when both
+methods are having same signature --->  Method Overriding.
+
+When base and dervied class variables are having same name, base class variables
+are suppressed in dervied classes --- Data Overriding.
+
+super ---> it is used to explcitly refer the base class variables / data
+
+super keyword is always used to refer its immediate parent
+
+A---------> B ----------->C
+
+super() method is used to refer its immediate parent constructor
+
+this()
+
+Modifiers
+----------
+
+1. private---> restricted only to that class
+2. public-----> it is available to all the classes in all the packages
+3. protected---> it is avaialbe to inherited classes in any package
+4.             (default)--Package level---> it is available to only that pacakge
+
+private ---> default ---> protected--->public
+
+@Override
+
+class Test1{
+		public void display(){
+			System.out.println("inside display of test1");
+		}
+}
+
+import pack1.Test1;
+
+class Test2 extends Test1{
+		
+		@Override
+		public void display(){
+			System.out.println("inside display of test2");
+		}
+}
+
+Test2 t = new Test2();
+t.display();
+
+final
+-----
+
+1. variable   ---> it becomes constant, value cannot be changed
+2. method     ---> it cannot be overriden in child classes
+3. class		----> it cannot be inherited
+
+
+2. uses---> an object of one class is used as property
+to another class
+
+class Address{
+		int dno;
+		String street;
+		String city;
+}
+
+class Person{
+		String name;
+		int age;
+		Address address;
+}
+
+3. has-a---> object of one class is passed as a parameter
+to anther class method
+class Person{
+		String name;
+		int age;
+		public void getAddress(Address adress){
+
+		}
+
+}
+
+p.getAddress(addr);
+
+
+Abstract classes
+-----------------
+
+
+class Shopping{
+		public void selectGoods(){
+			// code for selecting goods;// physical shopping
+		}
+		public void payment(){
+			// code for netbanking;
+		}
+		public void shipment(){
+			// code for shiping through dtdc;  // people carry on thier own
+		}
+}
+
+Shopping shop1 = new Shopping();
+Shopping shop2 = new Shopping();
+Shopping shop3 = new Shopping();
+
+
+Abstract classes
+----------------
+An abstract classes is a java class,which will have at least one abstract method
+An abstract method is a method which doesnot contain body
+
+abstract class Shopping{
+		public void selectGoods(){
+			// code for selecting goods;// physical shopping
+		}
+		public abstract void payment();
+
+		
+		public void shipment(){
+			// code for shiping through dtdc;  // people carry on thier own
+		}
+}
+
+Shopping s = new Shoppig();// error
+
+class SShop extends Shopping{
+
+}
+
+SShop s = SShop();
+
+class CashShop extends Shopping{
+	public void payment(){
+			// cash payment mode;
+	}
+}
+
+CashShop c1 = new CashShop();
+
+class UpiShop extends Shopping{
+	public void payment(){
+			// upi payment mode;
+	}
+}
+
+We cannot create objects directly for abstract classes
+
+abstract classes are incomplete classes, immature classes
+
+we have to inherit abstract methods into a child classes and override those method
+and create the object for child class
+
+
+
+Interfaces
+-----------
+Interfaces are java elements which consists of all abstract methods
+
+1. interfaces are defining the templates
+2. interfaces are defining the rules
+3. interfaces defines the blue print
+
+
+
+1. load the driver class
+2. establising the connection
+3. executing the queries
+
+java program ----> databases  // mysql, oracle, mongodb
+
+interface DataConnection{
+		public void loadDriver(String driver);
+		public void getConnection();
+		public void executeQueries(String queries);
+}
+
+
+class MySqldb implements DataConnection{
+
+	// override all the methdos of interface;
+}
+
+class Oracledb implements DataConnection{
+
+	// override all the methdos of interface;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
