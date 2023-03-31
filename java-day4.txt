@@ -1,0 +1,203 @@
+0. Object class
+1.Exception Handling
+2.Multi Threading
+3. Small Usecase
+4.Collection - List, Set
+
+
+Object class
+------------
+
+Object class is parent class of all the classes
+in java, including user defined classes 
+
+Methods in Object class
+-----------------------
+1. public final Class getClass()	
+2. public int hashCode()
+3. public String toString()
+4. public boolean equals(Object obj)
+5. protected Object clone() throws CloneNotSupportedException
+
+6. public final void notify()
+7. public final void notifyAll()
+
+8. public final void wait(long timeout)throws InterruptedException
+9. public final void wait(long timeout,int nanos)throws 	InterruptedException
+10. public final void wait()throws InterruptedException
+
+11. protected void finalize() throws Throwable
+
+Garbage Collection
+------------------
+
+It will automatically, cleans or removes the unused objects
+in the memory.
+
+Exception Handling
+-------------------
+It is the process of handling the runtime errors
+
+when we run a program, we may get two types of erros
+1. compile time  -- will occur due to wrong syntax of prog lang
+2. runtime  -- Hard to determine there are plenty of reasons to occur
+
+1. file not found
+2. memory not sufficient
+3. permission is not available
+
+s1
+s2
+s3  open f1.txt // runtime error
+
+s4  read the contents
+s5		display on monitor
+
+The exceptions which are direct descendts or children are called
+checked exceptions
+
+and the exceptions which are descends to Runtime Exception are 
+called unchecked exceptions
+
+checked exception will make the programmer to explcitly handle
+it using exception handling mechanism
+
+unchecked exception will not mandate for exception handling
+mechanism
+
+
+try{
+// which will contain the code for error prones
+
+}
+catch(IOException ){
+// block will contain error handling code
+
+}
+finally{
+// which will always execute irrespective of error occurs or not
+
+}
+next statements
+
+
+when there is no exception
+try ----> finally ----> continue exection after finally
+
+when there is an exception
+--------------------------
+try---> catch ---> finally ----> continue execution after finally
+
+when there is an exception,	
+
+try ---> finally ---> stop execution
+
+Array
+
+Index
+
+Runtime
+
+Exception
+
+getMessage()
+getPrintStack()
+
+try with resources
+-------------------
+jdk7
+
+try(IOStream io = new IOStream){
+
+
+}
+catch(){
+
+
+}
+
+try{
+1
+2
+3
+4
+;
+
+;
+;100
+}
+catch()
+catch()
+catch()
+
+
+
+s1
+
+try{
+	s2;
+}
+catch(){
+
+}
+
+s3
+s4
+
+try{
+	s5;
+}
+catch(){
+
+}
+
+s6
+
+throws  ----> it is used to make the code compild when a checked
+exception is not handled in the program
+
+exception is thrown to  calling place
+
+
+throw----> used to throw the exception explicitly
+
+
+try{
+		int a=10/0;
+}
+catch(IOException e)
+{
+
+}
+
+Throw is basically used in creating userdefined exceptions
+
+
+int 
+
+balance=5000;
+balance=4999; 
+
+1. we have to create our own exeption
+2. we have to explictly mention the condition
+3. we have to explicity rais the exception when that condition
+is met
+
+Steps to create user defined exception
+
+1. create a sub class to either exception class or runtimeexception
+2. pass the description of sub class throuh super() method
+3. write the condition
+4. raise the condition and handle it
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 package fisglobal;
 
-class Box2D {
+class Box2D extends Object{
 	int length;
 	int breadth;
 
@@ -34,6 +34,11 @@ class Box3D extends Box2D {
 	public void display() {
 		System.out.println("Inside the box3d display method");
 	}
+	
+	@Override
+	protected void finalize() throws Throwable{ // destructor
+		System.out.println("finally reclaimed");
+	}
 
 }
 
@@ -43,6 +48,8 @@ public class InheritanceExample {
 		
 
 		Box3D box2 = new Box3D();
+		
+		System.out.println(box2);
 		box2.calArea();
 		box2.calVolume();
 		box2.display();

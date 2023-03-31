@@ -1,6 +1,6 @@
 package fisglobal;
 
-class A{
+class A {
 	int x;
 	int y;
 	A(int x, int y){
@@ -39,7 +39,7 @@ class B extends A{
 	}
 
 
-public class SuperTest {
+public class SuperTest extends Object{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
