@@ -190,10 +190,190 @@ Steps to create user defined exception
 3. write the condition
 4. raise the condition and handle it
 
+age > 100 or age <0  ---> InvalidAgeException
+age >=0 and age <=17 ----> InsufficentAgeException
+age >=18 and age <=100 ---> sufficient to vote
+
+
+Usecase
+-------
+
+notemanagement create two packages called model and service
+
+
+1. create a class called "Note" with below variables;
+   noteId, author, title, description---String
+
+1001,praveen,java,object oriented lang
+1002,kumar,dotnet,simple ui lang
+1003,satish,ms,best arch style
+
+deleteNote(1005);
+
+
+class Note{
+private String noteId;
+private String author;
+private String title;
+private String description;
+
+public void setNoteId(String noteId){
+		this.noteId=noteId;
+}
+public String getNoteId(){
+		return noteId;
+}
+
+
+}
+
+Note note = new Note();
+note.noteId=1001;// error
+note.setNoteId(1001);// valid
+sop(note.getNoteId());//valid
+
+setXXX()
+getXXX()
 
 
 
 
+note class should be created in "model" package
+
+2. create an interface called NoteService with the crud operations for the
+   above Note Object
+
+interface NoteService{
+
+	public void createNote(Note note);
+	public void readNote();
+	public void updateNote(Note note);
+	public void deleteNotes(String noteId);
+
+}
+
+3. implement NoteService in another class called "NoteServiceImpl"
+
+NoteService and NoteServiceImpl must be created in "service" pacakge
+
+
+4. create class as NoteController in controller package
+create a public static void main program
+
+create an object for NoteServiceImpl notes
+
+5. create a menu based approach to read the choice 
+
+1. create note
+2. delete note
+3. update note
+4. display note
+enter your choice1
+notes.createNote(null);
+
+notes.deleteNotes(null);
+
+
+
+6. create user defined exceptions called
+
+ 6.1 InvalidNoteIdException
+ 6.2 InvalidNoteException
+above execeptions must be created in exceptions pacakge
+
+Multithreading
+---------------
+Multitasking--The ability to do multiple tasks simultenously
+
+Is the process of simultenously executing parts of the same program
+
+s1
+s2	
+s3
+
+s4
+s5
+s6
+the simple part which is executing is called thread
+process under execution is called thread
+thread is a light weight
+
+
+t1-----> t2 (wait)  t2.wait()
+t1.notify()---> t2 will get notified and activated
+
+t3---> t4 t4.wait()
+t3.notify()---> t4 will get notified and activated
+
+t1.notifyAll() ----> t2 and t4 all will  get activated
+
+
+threads are created with priorities
+
+1 to 10 (1 min and 10 max)
+
+by default all threads will have priority of 5
+
+In java thread can be created in two ways:
+
+1. Thread class -- All thread management methods
+
+2. Runnable Interface
+
+Methods in Thread class
+------------------------
+1. public void run(){
+ 
+  }
+
+2. public void start()
+
+3. public int getPriority()
+4. public void setPriority(int prirority);
+getName()
+setName()
+currentThread()
+getId()
+isAlive()
+join()
+yield()
+isDeamon()
+setDeamon()
+isInterrupted()
+interrupted()
+
+synchronization()
+
+s1
+s2
+s3
+synchronize{
+s4;
+s5;
+}
+s6;
+s7;
+
+t1---> s1
+t2---> s1
+
+
+ synchronize public void getDetails(){
+
+
+}
+
+
+synchronize Object obj;
+t1(obj)
+
+t2 --> has to wait
+t2(obj)  
+
+Collection
+----------
+It is represenation of group of elements as a single entity
+It is a dynamic object
 
 
 
