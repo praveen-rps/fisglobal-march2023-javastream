@@ -1,11 +1,16 @@
 package model;
 
 public class Note {
-	private String noteId;
+	@Override
+	public String toString() {
+		return "Note [noteId=" + noteId + ", title=" + title + ", author=" + author + ", description=" + description
+				+ "]";
+	}
+	private int noteId;
 	private String title;
 	private String author;
 	private String description;
-	public Note(String noteId, String title, String author, String description) {
+	public Note(int noteId, String title, String author, String description) {
 		super();
 		this.noteId = noteId;
 		this.title = title;
@@ -18,10 +23,10 @@ public class Note {
 	}
 	
 	
-	public String getNoteId() {
+	public int getNoteId() {
 		return noteId;
 	}
-	public void setNoteId(String noteId) {
+	public void setNoteId(int noteId) {
 		this.noteId = noteId;
 	}
 	public String getTitle() {
