@@ -1,0 +1,146 @@
+filter(Predicate)
+map(Function)
+
+1. collect()
+2. count()
+
+3. sorted()
+4. min()
+5. max()
+
+{1,8,9,10,22}----> min  --->1  max ----> 22
+{22,10,9,8,1}----> min ----> 22 max ----> 1
+
+{12,8,4}---> min ---> 	
+
+ar.forEach(consumer)
+
+ar.forEach(System.out::println)
+
+Method Referencing / constructor referencing
+----------------------------------------------
+
+Runnable r = ()->{
+							System.out.println("Hello this is referenced");
+							System.out.println("This is second line");
+							};
+
+
+public void run(){
+
+
+}
+public void m1(){
+
+}
+
+
+
+
+
+class Test{
+		public static void m1(){
+				System.out.println("Hello this is referenced");
+				System.out.println("This is second line");
+		}
+}
+
+Test t = new Test();
+
+Runnable r = t::m1;// method referencing
+Runnable r = Test:m1;
+
+forEach(System.out::println)
+
+Joda---> Date API
+
+LocalDate
+LocalTime
+ZoneId
+Period
+
+JDBC (Java Database Connectivity) (API)
+---------------------------------------
+
+Driver
+
+type-1---> jdbc-odbc bridge
+type-2 ---> partily api - native api
+type-3---> net protocol
+type-4---> pure java
+
+
+import java.sql.*;
+SQLException
+
+DriverManager
+Connection
+Statement
+PreparedStatement
+ResultSet
+
+jdbc api is to perform all sorts of database operations
+from java program
+
+DML---> insert,update,delete
+DDL ---> create,alter,drop,truncate
+
+
+To perfrom the jdbc operations
+------------------------------
+
+1. load the driver class
+   Class.forName("com.mysql.cj.jdbc.Driver");
+
+2. establish the connection
+		url = "jdbc:mysql://localhost:3306/fisglobal"
+		uid="root"
+		 pwd="root"
+    Connection con = DriverManager.getConnection(url,uid,pwd);
+	 int k = fact(10);
+
+3. create the statement object
+		Statement st = con.createStatement()
+	   String query = "insert into ssc values(?,?,?,?,?)";
+		PreparedStatement pst = con.prepareStatement(query);
+      read the values from keyboard
+		and set the values to ?
+	   pst.setInt(x)
+		pst.setString(n);
+		pst.executeQuery();// when you have select or create
+		pst.executeUpdate();// when you ahve dml commands
+
+		
+4. execute the query and fetch the results
+	String qry ="select * from ssc";
+	
+	ResultSet rs = st.executeQuery(qry);	
+
+5. process the results
+			next(), getXXX(), 
+
+			getInt(1)---> 10
+			getString(2)---> praveen
+			getString(3)--->Hyderabad
+			getString(4)---> Telengana
+6. close the object
+rs.close();
+st.close();
+con.close();
+
+	jar file
+
+
+executeUpdate();
+
+
+Statement()
+
+PreparedStatement()
+
+
+
+
+
+
+

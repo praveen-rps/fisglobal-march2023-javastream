@@ -1,0 +1,196 @@
+Agenda
+------
+
+1. Collections 
+     LIST
+	 SET
+     Queue
+	 Map
+
+2. Streams (Collection Streams -- java8)
+
+3. Method References, Joda Date API
+
+
+List
+----
+1. It is linear in structure
+2. Elements are access through its index
+3. Duplicate elements are allowed
+4. Null values are also allowed
+5. Insertion order is maintained
+
+Array ---> ArrayList
+Linked list ---> LinkedList
+
+
+
+
+Methods of Collection interface
+-------------------------------
+
+1	public boolean add(E e)	
+It is used to insert an element in this collection.
+
+2	public boolean addAll(Collection<? extends E> c)	
+It is used to insert the specified collection elements in the invoking collection.
+
+3	public boolean remove(Object element)	
+It is used to delete an element from the collection.
+
+4	public boolean removeAll(Collection<?> c)	
+It is used to delete all the elements of the specified collection from the invoking collection.
+
+5	default boolean removeIf(Predicate<? super E> filter)	
+It is used to delete all the elements of the collection that satisfy the specified predicate.
+
+6	public boolean retainAll(Collection<?> c)	
+It is used to delete all the elements of invoking collection except the specified collection.
+
+7	public int size()	
+It returns the total number of elements in the collection.
+
+8	public void clear()	
+It removes the total number of elements from the collection.
+
+9	public boolean contains(Object element)	
+It is used to search an element.
+
+
+ar ={1,2,3,4}
+ar.contains(2);//true
+ar.contains(5);false
+
+ar1 = {3,4}
+
+ar.contains(ar1); //true
+
+
+10	public boolean containsAll(Collection<?> c)	
+It is used to search the specified collection in the collection.
+
+11	public Iterator iterator()	
+It returns an iterator.
+
+
+To Travese the objects inside a collection
+------------------------------------------
+
+1. Iterator object
+2. using enhanced for loop
+3. forEach()
+
+ListIterator ltr =  collection.listIterator()
+hasNext()---> to check next element is available
+next()--> to point the next available element in list
+hasPrevious() ---> to check previous element is available
+previous() --> to point to the previous element inthe list
+
+
+
+
+12	public Object[] toArray()	
+It converts collection into array.
+
+13	public <T> T[] toArray(T[] a)	
+It converts collection into array. Here, the runtime type of the returned array is that of the specified array.
+
+14	public boolean isEmpty()	
+It checks if collection is empty.
+
+15	default Stream<E> stream()	
+It returns a sequential Stream with the collection as its source.
+
+16	public boolean equals(Object element)	
+It matches two collections.
+
+17	public int hashCode()	
+It returns the hash code number of the collection.
+
+
+Comparable---> Functional interface with only one method called
+compareTo()
+
+
+
+Comparator----> Functional Interface with only one method called
+compare()
+
+SET
+---
+
+1. which does not maintain insertion order
+2. duplicate elements are not allowed
+3. null values are allowed only once
+4. elements will not maintain linearity or cannot be accesed through
+   its index.
+
+set is implemented  as:
+
+HashSet
+Hashing function as it base structure to implemnet this type of set
+
+LinkedHashSet -- 
+1. duplicate elements are not allowed
+2. Insertion order is maintained
+3. LinkedList is used as its base structure to implement
+
+
+TreeSet
+1. duplicates are not allowed
+2. insertion order is not maitained
+3. elements are accessed in the sorted order while display
+
+
+Queue
+-----
+where elements are inserted at rear end and removed at front end.
+
+PriorityQueue
+
+10 20 3 4 50 1
+
+3 4 10 20 50
+
+ArrayDeque
+
+Map
+----
+Map is a two dimensional collection element, where every value is associated with a key
+
+and all the operations on values are associated with the keys only
+
+map is collection of (key,value)
+inside a map keys are unique and values can be duplicated
+
+Map is collection of entries
+
+Map is also called collection of collections
+
+
+Map implemented classes:
+
+HashMap
+TreeMap---> It will display the entries on the sorted order of key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
