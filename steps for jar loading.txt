@@ -1,0 +1,13 @@
+1. www.mvnrepository.com
+
+2. search for  in search text box
+
+3. click on mysql connector java link
+
+4. click on 8.0.28 verion and click on jar 
+
+5. right click on project
+
+Build path---> configure build path --> libraries--->
+add external jars--> browse to the jar file location, select
+the jar---> open--> apply and close
