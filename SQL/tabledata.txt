@@ -13,7 +13,7 @@ create table emp(
   hiredate date,   
   sal      decimal,   
   comm     decimal,   
-  deptno   decimal,   
+  deptno   int,   
   constraint pk_emp primary key (empno),   
   constraint fk_deptno foreign key (deptno) references dept (deptno)   
 )
