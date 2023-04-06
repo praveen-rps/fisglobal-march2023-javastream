@@ -53,3 +53,25 @@ records in sorted order based on firstname
 
 10. Write a query to display the customer number, customer firstname, customer lastname who has 
 taken loan from more than 1 branch. Display the records sorted in order based on customer number.
+
+
+11.Write a query to display the customer’s number, customer’s firstname, customer’s city and branch 
+city where the city of the customer and city of the branch is different. Display the records sorted in 
+ascending order based on customer number.
+
+12. Write a query to display the number of clients who have asked for loans but they don’t have any 
+account in the bank though they are registered customers. Give the count an alias name of Count
+
+17. Display the customer number, customer's first name, account number and number of transactions 
+being made by the customers from each account. Give the alias name for number of transactions as 
+Count_Trans. Display the records sorted in ascending order based on customer number and then by 
+account number.
+
+
+18. Write a query to display the customer’s firstname who have multiple accounts (atleast 2 
+accounts). Display the records sorted in ascending order based on customer's firstname
+
+20. Write a query to display the customer’s number, customer’s firstname, branch id and loan amount 
+for people who have taken loans. Display the records sorted in ascending order based on customer 
+number and then by branch id and then by loan amount.
+
