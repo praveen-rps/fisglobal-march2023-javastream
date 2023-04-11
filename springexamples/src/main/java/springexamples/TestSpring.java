@@ -11,10 +11,14 @@ public class TestSpring {
 				new ClassPathXmlApplicationContext("bean.xml");
 		
 		
-		Employee e = (Employee) context.getBean("emp");
-		System.out.println(e);
+		Employee e1 = (Employee) context.getBean("emp");
+		System.out.println(e1.hashCode());
+		e1.calSalary();
 		
-		Address addr = (Address)context.getBean("adr");
+		Employee e2 = (Employee) context.getBean("emp");
+		System.out.println(e2.hashCode());
+		
+		Address addr = (Address)context.getBean("addr");
 		System.out.println(addr);
 	
 	}

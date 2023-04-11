@@ -5,7 +5,7 @@ public class Employee {
 	String name;
 	String dept;
 	Address address;
-	Person person;
+	
 	
 	public Employee(int id, String name, String dept, Address address) {
 		super();
@@ -55,6 +55,8 @@ public class Employee {
 		return dept;
 	}
 	
-	
+	public void calSalary() {
+		System.out.println("Emp salary is calculated..");
+	}
 	
 }

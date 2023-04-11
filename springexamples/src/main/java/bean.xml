@@ -8,11 +8,11 @@
 
 
 	
-	<bean id="emp" class="springexamples.Employee" >
+	<bean id="emp" class="springexamples.Employee" autowire="byType" scope="prototype">
 		<property name="id" value="1001" />
 		<property name="name" value="Kumar" />
 		<property name="dept" value="Finance" />
-		<property name="address" ref="adr" />
+		
 		
 	</bean>
 	
@@ -26,10 +26,10 @@
 	</bean>
 	
 	-->
-	<bean id="adr" class="springexamples.Address">
+	<bean name="addr" class="springexamples.Address" init-method="intmethod" destroy-method="destroy">
 		<property name="dno" value="302" />
 		<property name="street" value="MG Road" />
-		<property name="city" value="Bangalore" />
+	<property name="city" value="Bangalore" />
  	
 	</bean>
 

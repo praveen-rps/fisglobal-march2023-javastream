@@ -37,5 +37,15 @@ public class Address {
 		return "Address [dno=" + dno + ", street=" + street + ", city=" + city + "]";
 	}
 	
+	public void ShowAddress() {
+		System.out.println("Inside the address class");
+	}
+	public void intmethod() {
+		System.out.println("Init phase of address bean is called..");
+	}
+	public void destroy()
+	{
+		System.out.println("destroy phase of address bean is called..");
+	}
 
 }
