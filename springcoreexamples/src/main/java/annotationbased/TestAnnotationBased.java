@@ -14,10 +14,13 @@ public class TestAnnotationBased {
 		
 		Book b= (Book)context.getBean(Book.class);
 		System.out.println(b);
+	
 		
+		TestDatabaseconnections t = 
+				(TestDatabaseconnections)context.getBean(TestDatabaseconnections.class);
 		
-		Employee e = (Employee) context.getBean(Employee.class);
-		System.out.println(e);
+		t.display1();
+		t.display2();
 
 	}
 
