@@ -1,10 +1,9 @@
-package annotationbased;
+package javabased;
 
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Bean;
 
 
-@Component 
-class Address {
+public class Address {
 	
 	int dno;
 	String street;
