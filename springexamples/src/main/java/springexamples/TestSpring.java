@@ -7,7 +7,8 @@ public class TestSpring {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+		ApplicationContext context = 
+				new ClassPathXmlApplicationContext("bean.xml");
 		
 		
 		Employee e = (Employee) context.getBean("emp");

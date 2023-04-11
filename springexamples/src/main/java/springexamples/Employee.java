@@ -4,38 +4,57 @@ public class Employee {
 	int id;
 	String name;
 	String dept;
+	Address address;
+	Person person;
 	
-	public Employee(int id, String name, String dept) {
+	public Employee(int id, String name, String dept, Address address) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.dept = dept;
+		this.address=address;
 	}
-	public Employee() {
-		
+	
+	public Address getAddress() {
+		return address;
 	}
-	public int getId() {
-		return id;
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
-	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDept() {
-		return dept;
-	}
+
 	public void setDept(String dept) {
 		this.dept = dept;
 	}
+
+	public Employee() {
+		
+	}
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", dept=" + dept + "]";
+		return "Employee [id=" + id + ", name=" + name + ", dept=" + dept + ", address=" + address + "]";
 	}
+
+	public int getId() {
+		return id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String getDept() {
+		return dept;
+	}
+	
 	
 	
 }
