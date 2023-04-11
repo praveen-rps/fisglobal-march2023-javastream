@@ -1,0 +1,36 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">  
+
+
+	
+	<bean id="emp" class="springexamples.Employee" autowire="byType" scope="prototype">
+		<property name="id" value="1001" />
+		<property name="name" value="Kumar" />
+		<property name="dept" value="Finance" />
+		
+		
+	</bean>
+	
+	<!-- 
+	<bean id="emp1" class="springexamples.Employee" >
+		<constructor-arg value="2002"/>
+		<constructor-arg value="Mahesh" />
+		<constructor-arg value="Quality" />
+		<constructor-arg ref="adr" />
+		<constructor-arg ref="p"/>
+	</bean>
+	
+	-->
+	<bean name="addr" class="springexamples.Address" init-method="intmethod" destroy-method="destroy">
+		<property name="dno" value="302" />
+		<property name="street" value="MG Road" />
+	<property name="city" value="Bangalore" />
+ 	
+	</bean>
+
+</beans>
