@@ -21,7 +21,7 @@ public class SalesServiceImpl implements SalesService {
 
 	public List<SalesTable> listAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.listAll();
 	}
 
 	public String addData(SalesTable sales) {
@@ -36,7 +36,7 @@ public class SalesServiceImpl implements SalesService {
 
 	public SalesTable searchTable(String ename) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.searchTable(ename);
 	}
 
 }

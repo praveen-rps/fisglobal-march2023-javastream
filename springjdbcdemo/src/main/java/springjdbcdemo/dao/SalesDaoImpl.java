@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import springjdbcdemo.model.SalesMapper;
 import springjdbcdemo.model.SalesTable;
 
 public class SalesDaoImpl implements SalesDao {
@@ -21,8 +22,9 @@ public class SalesDaoImpl implements SalesDao {
 
 	public List<SalesTable> listAll() {
 		// TODO Auto-generated method stub
+		String sql = "select * from salestable";
+		return template.query(sql, new SalesMapper());
 		
-		return null;
 	}
 
 	public String addData(SalesTable sales) {
@@ -42,8 +44,22 @@ public class SalesDaoImpl implements SalesDao {
 
 	public SalesTable searchTable(String ename) {
 		// TODO Auto-generated method stub
-		template.update(" ");
-		return null;
+		String sql = "select * from salestable";
+		String sql1 = "select ename,job from salestable";
+		SalesTable table=null;
+		boolean found=false;
+		List<SalesTable> results = template.query(sql, new SalesMapper());
+		for(SalesTable t :results) {
+			if(t.getEname().equals(ename)) {
+				found=true;
+				table=t;
+				break;
+			}
+		}
+		if(found)
+			return table;
+		else
+			return null;
 	}
 
 }
