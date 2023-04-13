@@ -9,5 +9,8 @@
 </head>
 <body>
 	<h2>Test page is working...</h2>
+	<c:forEach var="d" items="${data}">
+        <c:out value="${d.id}" />
+    </c:forEach>
 </body>
 </html>
