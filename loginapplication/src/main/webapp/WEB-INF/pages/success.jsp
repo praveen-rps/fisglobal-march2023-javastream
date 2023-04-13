@@ -10,11 +10,11 @@
 </head>
 <body>
 <h2>Hello, ${user} welcome  </h2>
-<h2 style="color:green">Student Management Application </h2>
+<h2 style="color:green">User Management Application </h2>
 <ul>
-	<li><a href="add">Add a Student</a></li>
-	<li><a href="search">Search a Student</a></li>
-	<li><a href="delete">Delete a Student</a></li>
+	<li><a href="add">Add a User</a></li>
+	<li><a href="search">Search a User</a></li>
+	<li><a href="delete">Delete a User</a></li>
 </ul>
 
 </body>
