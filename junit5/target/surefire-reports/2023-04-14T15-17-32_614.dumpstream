@@ -1,0 +1,4 @@
+# Created at 2023-04-14T15:17:33.943
+Boot Manifest-JAR contains absolute paths in classpath 'D:\FIS Global\March2023\java\junit5\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+

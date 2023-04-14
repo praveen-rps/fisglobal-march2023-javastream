@@ -1,0 +1,4 @@
+15:17:35.773 [main] INFO  c.browserstack.BrowserStackJavaAgent - Framework set to junit5
+15:17:37.660 [main] INFO  c.browserstack.BrowserStackJavaAgent - Starting BrowserStack Local......
+15:18:08.375 [main] ERROR com.browserstack.LocalFactory - Initialization of BrowserStack Local failed com.browserstack.local.LocalException: Disconnected.
+15:18:08.376 [main] ERROR c.browserstack.BrowserStackJavaAgent - Something went wrong - com.browserstack.utils.BrowserStackSDKException: Initialization of BrowserStack Local failed Disconnected.
