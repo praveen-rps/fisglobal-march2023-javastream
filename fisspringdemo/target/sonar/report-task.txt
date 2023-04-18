@@ -1,0 +1,7 @@
+organization=fis-global
+projectKey=fis-global_AayushiTripathi
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.40032
+dashboardUrl=https://sonarcloud.io/dashboard?id=fis-global_AayushiTripathi
+ceTaskId=AYeTyUU_5pVffQ0WHzTA
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AYeTyUU_5pVffQ0WHzTA
