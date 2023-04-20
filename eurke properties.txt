@@ -1,0 +1,10 @@
+In eureka server add below lines in application.properties
+---------------------------------------------------------
+
+eureka.client.registerWithEureka = false
+eureka.client.fetchRegistry = false
+
+
+In Eureka client add below line in application.properties
+----------------------------------------------------------
+eureka.client.serviceUrl.defaultZone  = http://localhost:8761/eureka
