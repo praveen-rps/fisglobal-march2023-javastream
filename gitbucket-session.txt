@@ -1,0 +1,39 @@
+Version Control
+---------------
+Version control, also known as source control, is the practice of tracking and managing changes to software code.
+
+Version control systems are software tools that help software teams manage changes to source code over time.
+
+As development environments have accelerated, version control systems help software teams work faster and smarter. 
+
+
+Version control software keeps track of every modification to the code in a special kind of database
+
+If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimizing disruption to all team members.
+
+
+Advantages of Version Control:
+
+1. A complete long-term change history of every file
+2. Branching and Merging
+3. Traceability.
+
+
+Types of Version Control Systems
+--------------------------------
+1. Centralized Version Control
+
+A centralized version control system relies on a central server where developers commit changes. Users like centralized systems, because they’re simple to set up and provide admins with workflow controls. 
+
+eg> Subversion, CVS, and Perforce etc.,
+
+
+2. Distributed Version Control
+Distributed Version Control is a version control where each client can have same copy of source code as server has and both server and client maintain history of source code.
+
+Eg> Mercurial, Git and Bazaar etc.,
+
+
+
+
+

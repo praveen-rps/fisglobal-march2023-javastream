@@ -1,0 +1,464 @@
+Git Commands
+------------
+
+1. git config --system user.name "praveen"
+
+
+2. git config --system user.email "gs.praveenkumar5@gmail.com"
+
+3. git config --system --list // to check the system level configs
+
+4. git config --system user.name
+
+5. git config --system user.email
+
+6. git config --system --list --show-origin
+
+To set the global level configuration
+-------------------------------------
+
+7. git config --global user.name "praveen"
+
+8. git config --gobal user.email "gs.praveenkumar5@gmail.com"
+
+9. git config --global --list
+
+To set local level configurations
+---------------------------------
+
+To set the local level repositories, it must be set only in the repositories so, create a local repository or directory
+and execute a command first git init
+
+mkdir localRepo
+
+cd localRepo
+
+10. in side localRepo execute git init
+
+set the local level configurations inside 
+-----------------------------------------
+
+11. git config --local user.email "praven""
+
+12. git config --local user.email "gs.praveenkumar5@gmail.com"
+
+13. git config --global core.autocrlf true
+
+14. git config --global core.autocrlf input
+
+
+Git Basic Commands
+-------------------
+
+15. create three files called file1.txt, file2.txt, file3.txt, by using
+cat and cp commands
+
+All the above three files are in working directory level
+
+
+16.  git add file1.txt
+above command moves the file from working directory to staging directory.
+
+
+17. git status
+we can see only file1.txt in green and others in red indicating that these files are not 
+added to staging directory.
+
+
+Now add the one more file2.txt also to staging directory
+
+18. git add file2.txt
+now file2.txt is also added to staging directory
+
+19. git status ( we can see both file1.txt and file2.txt in green and file3.txt still red indicating
+it is still in working directory not added to staging directory)
+
+
+20. Now commit the files to local repository using below command
+git commit -m "commit message"
+
+
+21. git status
+we can see only file3.txt only in red meaning it is left in working directory only.
+
+22. check the logs 
+
+git log
+
+$ git log
+commit b181d94e190ff7ceba429def26f29e5c50182f32 (HEAD -> master)
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:17:55 2023 +0530
+
+    my first commit for two files
+
+
+We can the branch to which it is added and author details
+
+
+
+23. git add .
+will add all the files in current working directory.
+
+24. git status
+will show only file3.txt in green, as this is the one which is available in working directory
+which is not moved to staging
+
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file3.txt
+
+
+25. commit these changes
+git commit -m "adding file3.txt to local repository"
+
+
+$ git commit -m " adding file3.txt to local repo"
+[master 48fbd84]  adding file3.txt to local repo
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file3.txt
+
+
+26. git status 
+as no file left in working directory so nothing will be shown
+
+On branch master
+nothing to commit, working tree clean
+
+
+27. git log
+
+$ git log
+commit 48fbd8422a62b54c903540bbe7ae622da73a7afe (HEAD -> master)
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:22:34 2023 +0530
+
+     adding file3.txt to local repo
+
+commit b181d94e190ff7ceba429def26f29e5c50182f32
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:17:55 2023 +0530
+
+    my first commit for two files
+
+we can observe two sha headers regarding two local commits done
+
+
+28. edit the file1.txt and make some changes and see the status again
+
+vi file1.txt , add the content, esc->:wq! to quit
+
+29. git status
+this time we can see the file1.txt in red indicating this is new file which has 
+modifications in the working directory.
+
+
+30 we can use git stage for add files to staging area also
+
+git stage file1.txt
+
+
+31. commit the changes to local repository
+git commit -m "new lines were updated to file1"
+
+$ git commit -m "new lines were updated"
+[master 9023b2b] new lines were updated
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+32. git status
+
+On branch master
+nothing to commit, working tree clean
+
+
+33. git log
+
+$ git log
+commit 9023b2b5042092a5e6f7831fe23ab9414771df6c (HEAD -> master)
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:28:46 2023 +0530
+
+    new lines were updated
+
+commit 48fbd8422a62b54c903540bbe7ae622da73a7afe
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:22:34 2023 +0530
+
+     adding file3.txt to local repo
+
+commit b181d94e190ff7ceba429def26f29e5c50182f32
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:17:55 2023 +0530
+
+    my first commit for two files
+
+can observe all the three commits done so for done in the local repository
+
+
+Git Restore command is used to bring down the files from staging directory to working directory
+
+
+
+34. edit file2.txt and make some changes
+
+vi file2.txt --> this is appended to file2
+
+
+35. git status
+we can observe that file2.txt is not staged and in working directory only
+
+
+36. now stage this file to staging directory
+
+git stage file2.txt
+
+37. check the status now, it will show file2.txt in green color indicating that it is in
+staging directory.
+
+git status
+
+
+38.  Let us say at this point, i dont want to stage it, want to move back to working 
+directory
+
+git restore --staged file2.txt
+
+
+39. git status
+this will again show the file2.txt in red color indicating restored to working directory.
+
+
+40. to move the file comeplety from local repository to working directory
+
+git status --file2.txt  
+
+we can see that file2 is modified and not added to local repository
+
+
+41. git checkout --file2.txt
+will completely remove fromt he local repository to working directory
+
+
+git reset
+---------
+If we have 4 commits in the repository say A, B, C and D and git head pointed to 
+D commit
+
+here at this stage I dont want C and D commits, need to point to B only, then
+we can use reset command
+
+
+If head pointed to B, C and D Commits will be lost.
+
+
+will try to update file3.txt file with some lines added
+
+
+42. lets stage this file 
+
+git stage * ( or git stage file3.txt)
+
+
+43. Lets commit these changes to local repository
+
+git commit -m  "this would be the last commit head is pointing"
+
+
+44. git status
+$ git log
+commit e5d9204322e8eb126a83ecdbee81f66258f6c6d5 (HEAD -> master)
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 12:01:05 2023 +0530
+
+    this would be the last commit head is pointing
+
+commit 9023b2b5042092a5e6f7831fe23ab9414771df6c
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:28:46 2023 +0530
+
+    new lines were updated
+
+commit 48fbd8422a62b54c903540bbe7ae622da73a7afe
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:22:34 2023 +0530
+
+     adding file3.txt to local repo
+
+commit b181d94e190ff7ceba429def26f29e5c50182f32
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:17:55 2023 +0530
+
+    my first commit for two files
+
+
+we can see all four commits in the log
+
+
+45. Now I want to reset to the 9023b2b5042092a5e6f7831fe23ab9414771df6c this head
+
+git reset --soft 9023b2b5042092a5e6f7831fe23ab9414771df6c
+
+
+46. git log
+$ git log
+commit 9023b2b5042092a5e6f7831fe23ab9414771df6c (HEAD -> master)
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:28:46 2023 +0530
+
+    new lines were updated
+
+commit 48fbd8422a62b54c903540bbe7ae622da73a7afe
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:22:34 2023 +0530
+
+     adding file3.txt to local repo
+
+commit b181d94e190ff7ceba429def26f29e5c50182f32
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:17:55 2023 +0530
+
+    my first commit for two files
+
+we can see last commit is deleted and head pointed to last but one only
+
+
+47. git status
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file3.txt
+
+but the changes we did to the file is still persists, we need to remove those from staging to working directory using restore commane
+
+
+48. git restore --staged file3.txt
+
+
+49. git status
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file3.txt
+
+we can see file3.txt to red color indicating this is still in working directory
+
+
+49. git checkout --file3.txt to complete remove from the repository 
+
+git checkout -- file3.txt
+
+
+50. to check the status , we can see tree is clean
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+51. If we see the contents of file3.txt, the updates done are completely removed from it.
+$ cat file3.txt
+This is the file contents in file1
+
+
+To check all the files in staging area
+--------------------------------------
+
+55. git ls-files
+file1.txt
+file2.txt
+file3.txt
+
+
+
+
+Branching
+----------
+
+Currently we are in Master branch
+
+56.to check the branches available in our repository
+
+git branch
+
+57. to create a new branch
+
+git branch <branchname>
+git branch newBranch
+
+
+58. To switch from one branch to another branch, use below command
+
+git checkout <branchname>
+git checkout newBranch
+
+
+59. To check the files in the current branch
+
+git ls-files
+here all the files in the master are now available in newBranch also
+
+
+60. git log
+$ git log
+commit 9023b2b5042092a5e6f7831fe23ab9414771df6c (HEAD -> newBranch, master)
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:28:46 2023 +0530
+
+    new lines were updated
+
+commit 48fbd8422a62b54c903540bbe7ae622da73a7afe
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:22:34 2023 +0530
+
+     adding file3.txt to local repo
+
+commit b181d94e190ff7ceba429def26f29e5c50182f32
+Author: praveen <praveenk@rpsconsulting.in>
+Date:   Fri Mar 3 11:17:55 2023 +0530
+
+    my first commit for two files
+
+we can see the head pointed to newBranch only
+
+
+61. To merge any branch, first move to that branch and execute the below command
+
+in our example we are merging newBranch to master, so first move to master branch and execute below command
+
+git checkout master
+git merge newBranch
+
+
+To create a new branch and switch to it, execute below command
+--------------------------------------------------------------
+
+62. git checkout -b newBranch2
+
+
+to remove any branch
+-------------------
+
+63. git branch -d <branchname>
+
+git branch -d newBranch2
+
+
+64. git branch
+
+
+
+
+
+
+
+
+
+
+
