@@ -1,0 +1,43 @@
+Step-0: create the tables as per schema and insert the data-- 30 min
+
+step-1: Create a springboot starter application by adding the following
+dependencies:
+Spring Web, Spring Dev Tools, MySqlDriver, Spring Data Jpa  -- 10 min
+
+
+step2: Make the necessary changes for database  -- 10 min
+
+Step 3: create the model classes for tables in database -- 30 min
+Account, @Table(name="account_master")
+Branch,
+Loan,
+Transaction
+
+Step 4: create dao interfaces for each entity-- 30 min
+public interface CustomerDao implements JpaRepository<Customer,String>{
+
+}
+public interface AccountDao implements JpaRepository<Account,String>{
+
+}
+like wise create dao interfaces for remaining entities
+
+Step-5: write service interface --- > 15 min
+
+Step -6: write service impl methods ---> 1 hr
+
+Step - 7 : write controller methods ---> 1hr
+
+by 3pm your admin service should be ready
+
+
+
+
+display and artifcatId
+pratigya-adminservice
+pratigya-userservice
+
+
+
+
+
